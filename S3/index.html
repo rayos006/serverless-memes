@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title>Welcome!</title>
+    <link rel="stylesheet" type="text/css" href="./css/semantic.min.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./js/semantic.min.js"></script>
+    <script src="./js/memes.js"></script>
+</head>
+<header>
+    <div class="ui top attached menu" style="margin-bottom: 2em">
+        <div class="ui dropdown icon item" onclick="upload_meme()">
+            <i class="blue add icon"></i>
+            <label style="color: #2185d0!important"> Upload Meme</label>
+        </div>
+        <div class="right menu">
+            <div class="ui right aligned category search item">
+                <div class="ui transparent icon input">
+                    <input class="prompt" type="text" placeholder="Search memes...">
+                    <i class="search link icon"></i>
+                </div>
+                <div class="results"></div>
+            </div>
+        </div>
+    </div>
+</header>
+<body>
+    <div id="memeListings" class="ui five column grid">
+    </div>
+
+    <!-- ********************************************  MEME MODAL  ******************************************** -->
+    <div class="ui special showMeme modal">
+        <div id="MemeName" class="header">
+        </div>
+        <div id="BigMeme" class="content">
+    
+        </div>
+        <div class="actions">
+            <button class="ui positive right labeled icon button">
+                Done
+                <i class="checkmark icon"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- ********************************************  UPLOAD MODAL  ******************************************** -->
+    <div class="ui special upload_meme modal">
+        <div id="upload_meme" class="header">
+            <h1>New Meme:</h1>
+        </div>
+
+        <div class="content">
+            <form class="ui form">
+                <div class="required field">
+                    <label>Name</label>
+                    <input type="text" class="name" placeholder="Name">
+                </div>
+                <div class="required field">
+                    <label>Meme</label>
+                    <input type="file" class="file_to_upload" id="file_to_upload">
+                </div>
+                <label>Username</label>
+                <div class="field">
+                    <input type="text" class="username" placeholder="Username" value="">
+                </div>
+            </form>
+    </div>
+
+        <div class="actions">
+            <button class="ui negative right labeled icon button">
+                Cancel
+                <i class="cancel icon"></i>
+            </button>
+            <button class="ui positive right labeled icon button" onclick="create_meme()">
+                Upload
+                <i class="checkmark icon"></i>
+            </button>
+        </div>
+    </div>
+<!-- ************************************** NAUGHTY PICTURE MODAL  ************************************** -->
+    <div class="ui naughty basic modal">
+        <div class="ui icon header">
+            <i class="exclamation icon"></i>
+            Your photo has been flagged!
+        </div>
+        <div class="center content">
+            <p style="text-align: center;" id="naughty_reason">Your photo has been flagged for the following reasons: </p>
+        </div>
+        <div class="actions">
+            <div class="ui green ok inverted button">
+                <i class="checkmark icon"></i>
+                Ok
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
