@@ -21,10 +21,10 @@ Now that the lambdas are created, Go to API Gateway and create your meme API to 
 Dont forget to add the Mapping Templates under the Integration Tab. This is what you will be forwarding to your lambdas. See examples below: (All are using ```application\json```)
 
 - POST
-  ```sh
+```sh
   {
     "data" : $input.json("$")
-}
+  }
 ```
 
 - GET (Your get meme lambda)
