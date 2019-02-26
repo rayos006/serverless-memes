@@ -9,6 +9,11 @@ Create a table using meme_id (String) as the primary key and default settings
 
 Take note of your table name for the next parts
 
+
+## Lambdas
+To start using the code provided to create your lambdas. Make sure you assign the ```lambda-rekognition-full``` security group to allow the proper permissions
+
+Find the ```change me``` comments in the code and change them to your ```S3 Bucket Name``` or ```DynamoDB Table Name```
 ## API Gateway
 Now that the lambdas are created, Go to API Gateway and create your meme API to front the lambdas. An example swagger file has been provided but feel free to be creative. You will need 4 endpoints that point to the following:
 - POST (Your create meme lambda)
@@ -54,6 +59,8 @@ Make note of your API URL for the next parts.
 
 Go to S3 and create yourself a bucket.
 
+Make sure that the first three check boxes under ```Set Permissions``` are unchecked
+
 Next we will configure your new bucket to allow other people to see your work. Follow along below:
 - Under Properties -> Static Website Hosting, Click Use this bucket to host a website
 - Enter index.html as the Index Document
@@ -63,7 +70,7 @@ Next we will configure your new bucket to allow other people to see your work. F
 - Enter a policy like the one below (Make sure you add your bucket name!)
 ```sh
 {
-    "Version": "2019-02-20",
+    "Version": "2008-10-17",
     "Id": "PolicyForPublicWebsiteContent",
     "Statement": [
         {
@@ -80,11 +87,6 @@ Next we will configure your new bucket to allow other people to see your work. F
 ```
 
 Now your bucket is ready to host a website!
-
-## Lambdas
-To start using the code provided to create your lambdas. Make sure you assign the ```lambda-rekognition-full``` security group to allow the proper permissions
-
-Find the ```change me``` comments in the code and change them to your ```S3 Bucket Name``` or ```DynamoDB Table Name```
 
 ## Meme Code
 
