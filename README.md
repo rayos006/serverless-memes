@@ -2,7 +2,7 @@
 S3 site with lambdas, API Gateway, and DynamoDB
 
 # Setup
-All code is in this repository for you to get started with your very own meme site. This is designed to run in AWS and specifically it has dependencies in BYU's traning account
+All code is in this repository for you to get started with your very own meme site. This is designed to run in AWS and specifically it has dependencies in BYU's traning account. You will need to download the code provided.
 
 ## DynamoDB
 Create a table using meme_id (String) as the primary key and default settings
